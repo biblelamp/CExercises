@@ -6,12 +6,14 @@
 
 int main()
 {
-	int a = 10;
-	int b = 20;
-	int c = 0;
-	MAX(a, b, c); // c to get the value 20
+    int a = 10;
+    int b = 20;
+    int c = 0;
+    MAX(a, b, c); // c to get the value 20
     std::cout << c << "\n";
     MAX(a += b, b, c); // c to get the value 30
+    std::cout << c << "\n";
+    MAX(a, b += a, c); // c to get the value 50
     std::cout << c;
     return 0;
 }
