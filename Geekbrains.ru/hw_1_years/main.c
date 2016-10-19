@@ -1,8 +1,10 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
+#include <windows.h>
 
 int main()
 {
     int year;
+    SetConsoleOutputCP(CP_UTF8); // for text in Russian
     printf("Enter age in year:\n");
     scanf("%d", &year);
 
@@ -19,19 +21,19 @@ int main()
     // in Russian
     if (year > 4 && year < 21)
     {
-        printf("Âîçðàñò %d ëåò\n", year);
+        printf("Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚ %d Ð»ÐµÑ‚\n", year);
     }
     else if (year % 10 == 1)
     {
-        printf("Âîçðàñò %d ãîä\n", year);
+        printf("Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚ %d Ð³Ð¾Ð´\n", year);
     }
     else if (year % 10 > 1 && year % 10 < 5)
     {
-        printf("Âîçðàñò %d ãîäà\n", year);
+        printf("Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚ %d Ð³Ð¾Ð´Ð°\n", year);
     }
     else
     {
-        printf("Âîçðàñò %d ëåò\n", year);
+        printf("Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚ %d Ð»ÐµÑ‚\n", year);
     }
 
     return 0;
