@@ -23,6 +23,7 @@ void getRandomArray(int* array , int length)
 {
     for(int i = 0; i < length; i++)
         array[i] = rand()%100; // generate from 0...99 use RAND_MAX
+    printf("Array filled.\n");
 }
 
 void saveArrayToFile(int* array , int length)
@@ -31,15 +32,15 @@ void saveArrayToFile(int* array , int length)
     file = fopen(FileName, "w");
     if (file == NULL)
     {
-        puts("Can't write file\n");
+        puts("Can't write file.\n");
     }
     else
     {
         fprintf(file, "%d ", MaxLength);
         for(int i = 0; i < length; i++)
             fprintf(file, "%d ", array[i]);
-        printf("File saved.\n");
         fclose(file);
+        printf("File saved to file.\n");
     }
 }
 
@@ -50,7 +51,7 @@ void getArrayFromFile(int* array)
     file = fopen(FileName, "r");
     if (file == NULL)
     {
-        puts("Can't read file\n");
+        puts("Can't read file.\n");
     }
     else
     {
@@ -58,6 +59,7 @@ void getArrayFromFile(int* array)
         for(int i = 0; i < length; i++)
             fscanf(file, "%d ", &array[i]);
         fclose(file);
+        printf("Array read from file.\n");
     }
 }
 
@@ -71,23 +73,20 @@ int main()
         printf("2. Fill array randomly\n");
         printf("3. Save array to file\n");
         printf("4. Get array from file\n");
+        printf("5. Print array\n");
         printf("0. Exit\n: ");
         scanf("%d", &choice);
         switch(choice)
         {
-            case 1:
-                getArrayFromKeyboard(a, MaxLength);
-                printArray(a, MaxLength);
+            case 1: getArrayFromKeyboard(a, MaxLength);
                 break;
-            case 2:
-                getRandomArray(a, MaxLength);
-                printArray(a, MaxLength);
+            case 2: getRandomArray(a, MaxLength);
                 break;
-            case 3:
-               saveArrayToFile(a, MaxLength);
+            case 3: saveArrayToFile(a, MaxLength);
                 break;
             case 4: getArrayFromFile(a);
-                printArray(a, MaxLength);
+                break;
+            case 5: printArray(a, MaxLength);
                 break;
             case 0: printf("The end.\n");
                 break;
