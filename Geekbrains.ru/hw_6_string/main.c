@@ -50,15 +50,17 @@ char mostFrequentVowel(char * str)
 int main(int argc, char *argv[])
 {
     char ch;
-    char string[80];
+    char buffer[80];
+    char *string;
     if (argc > 2)
     {
-        *string = &argv[1];
+        string = argv[1];
         ch = (char) argv[2][0];
-        printf("%s\n", string);
+        printf("String '%s' symbol '%c'\n", string, ch);
     }
     else
     {
+        string = buffer;
         puts("Input string:");
         gets(string);
         printf("Input char: ");
