@@ -28,12 +28,26 @@ int isStringPermutationAnother(char * str1, char * str2)
 
 int main(int argc, char *argv[])
 {
-    char str1[128];
-    char str2[128];
-    puts("Input string 1:");
-    gets(str1);
-    puts("Input string 2:");
-    gets(str2);
+    char buf1[128];
+    char buf2[128];
+    char * str1;
+    char * str2;
+
+    if (argc > 2)
+    {
+        str1 = argv[1];
+        str2 = argv[2];
+        printf("First string is '%s'\nSecond string is '%s'", str1, str2);
+    }
+    else
+    {
+        str1 = buf1;
+        str2 = buf2;
+        puts("Input string 1:");
+        gets(str1);
+        puts("Input string 2:");
+        gets(str2);
+    }
     if (isStringPermutationAnother(str1, str2))
         puts("We can get one string from the other by a permutation of symbols.");
     else
