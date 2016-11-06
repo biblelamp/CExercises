@@ -16,11 +16,12 @@ int getCharPosition(char * str, char ch)
 
 int isStringPermutationAnother(char * str1, char * str2)
 {
+    int p;
     if (len(str1) != len(str2)) return 0;
     for(int i = 0; i < len(str1); i++)
     {
-        int p = getCharPosition(str2, str1[i]);
-        if (p == -1) return 0;
+        //p = getCharPosition(str2, str1[i]);
+        if ((p = getCharPosition(str2, str1[i])) == -1) return 0;
         str2[p] = '\n';
     }
     return 1;
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
     {
         str1 = argv[1];
         str2 = argv[2];
-        printf("First string is '%s'\nSecond string is '%s'", str1, str2);
+        printf("First string is '%s'\nSecond string is '%s'\n", str1, str2);
     }
     else
     {
@@ -51,6 +52,6 @@ int main(int argc, char *argv[])
     if (isStringPermutationAnother(str1, str2))
         puts("We can get one string from the other by a permutation of symbols.");
     else
-        puts("We can't get one string from the other by a permutation of symbols");
+        puts("We can't get one string from the other by a permutation of symbols.");
     return 0;
 }
