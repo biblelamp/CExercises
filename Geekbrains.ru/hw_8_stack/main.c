@@ -28,10 +28,14 @@ void push(T value)
         return;
     }
     Node * tmp = (Node *) malloc(sizeof (Node));
-    tmp -> value = value;
-    tmp -> next = Stack.head;
-    Stack.head = tmp;
-    Stack.size++;
+    if (tmp != NULL) // check error after memory allocation
+    {
+        tmp -> value = value;
+        tmp -> next = Stack.head;
+        Stack.head = tmp;
+        Stack.size++;
+    }
+    else printf("Memory allocation error.\n");
 }
 
 T pop () {
