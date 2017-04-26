@@ -6,7 +6,7 @@ int main()
     printf("Enter coordinates x1 y1 x2 y2 (1..8):\n");
     scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
 
-    if ((x1 + y1) % 2 == (x1 + y1) % 2)
+    if ((x1 + y1) % 2 == (x2 + y2) % 2)
     {
         printf("The cells have equal color");
     }
